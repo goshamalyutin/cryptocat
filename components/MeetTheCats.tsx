@@ -53,7 +53,7 @@ export default function MeetTheCats() {
               <div className="relative z-[2] grid h-[240px] place-items-end justify-center">
                 <Image
                   src={cat.image}
-                  alt={`${cat.name} — ${cat.role}`}
+                  alt={`Simone — ${cat.rank}`}
                   width={cat.width}
                   height={CAT_IMG_HEIGHT}
                   sizes="254px"
@@ -61,11 +61,11 @@ export default function MeetTheCats() {
                   style={{ filter: "drop-shadow(0 18px 22px rgba(0,0,0,.55))" }}
                 />
               </div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-gold">
-                {cat.role}
+              <h4 className="font-display text-[21px] font-bold leading-tight">{cat.rank}</h4>
+              <span className="mt-1 block font-mono text-[11px] uppercase tracking-[0.12em] text-gold">
+                {cat.name}
               </span>
-              <h4 className="mb-2 mt-[3px] font-display text-[21px] font-bold">{cat.name}</h4>
-              <p className="min-h-[38px] text-[13.5px] text-muted">{cat.lore}</p>
+              <p className="mt-2 min-h-[38px] text-[13.5px] text-muted">{cat.lore}</p>
             </article>
           ))}
         </div>

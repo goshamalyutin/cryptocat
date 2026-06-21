@@ -5,16 +5,18 @@ import type { FloaterDef } from "@/components/ui/Floaters";
  * Positioned to avoid the hero headline/buttons (left column on desktop).
  * Far objects: small, faint, blurred, low depth. Near: large, sharp, high depth.
  */
+// Hero floaters live ONLY in the empty area around the cat (right column on
+// desktop). They never sit over the H1, subtext, buttons, or stats (left
+// column). All are `hideMobile` so the hero has zero floaters on mobile, where
+// the layout stacks and there is no empty space to spare.
 export const heroFloaters: FloaterDef[] = [
-  // near / sharp — kept on mobile
-  { src: "coin", pos: { right: "10%", top: "12%" }, size: 70, depth: 1.3, anim: "bob" },
-  { src: "coin", pos: { right: "5%", bottom: "23%" }, size: 96, depth: 1.6, anim: "bob-slow", delay: 0.6 },
-  { src: "crystal", pos: { right: "21%", top: "33%" }, size: 78, depth: 1.0, rotate: -8, anim: "float", delay: 0.3 },
-  // far / faint — desktop only
-  { src: "crystal", pos: { right: "3%", top: "47%" }, size: 50, depth: 0.6, opacity: 0.6, blur: 2, anim: "float", delay: 1.1, hideMobile: true },
-  { src: "coin", pos: { left: "5%", top: "8%" }, size: 46, depth: 0.5, opacity: 0.55, blur: 1.5, anim: "bob", delay: 0.9, hideMobile: true },
-  { src: "crystal", pos: { left: "4%", bottom: "10%" }, size: 58, depth: 0.8, rotate: 12, opacity: 0.85, anim: "bob", delay: 1.4, hideMobile: true },
-  { src: "coin", pos: { right: "34%", top: "6%" }, size: 40, depth: 0.4, opacity: 0.5, blur: 2, anim: "bob-slow", delay: 0.2, hideMobile: true },
+  // upper-right, above/beside the cat
+  { src: "coin", pos: { right: "7%", top: "9%" }, size: 64, depth: 1.2, opacity: 0.9, anim: "bob", hideMobile: true },
+  { src: "crystal", pos: { right: "1%", top: "30%" }, size: 66, depth: 1.0, rotate: -8, opacity: 0.8, anim: "float", delay: 0.4, hideMobile: true },
+  // lower-right, near the cat's feet / right edge
+  { src: "coin", pos: { right: "4%", bottom: "16%" }, size: 78, depth: 1.4, opacity: 0.85, anim: "bob-slow", delay: 0.7, hideMobile: true },
+  // far / faint accent, still well clear of the text column
+  { src: "crystal", pos: { right: "26%", top: "8%" }, size: 44, depth: 0.5, opacity: 0.45, blur: 2, rotate: 10, anim: "bob", delay: 1.1, hideMobile: true },
 ];
 
 /** Subtle decorations for dark content sections (desktop only). */

@@ -43,7 +43,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 2,
-    name: "Frost",
+    name: "Simone",
     role: "Cozy Digger",
     rank: "The Digger",
     lore: "Found her rhythm. Mines through the night, warm and unbothered.",
@@ -53,7 +53,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 3,
-    name: "Bolt",
+    name: "Simone",
     role: "Speedrunner",
     rank: "The Runner",
     lore: "Learned every tunnel by heart. Fastest paws underground.",
@@ -63,7 +63,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 4,
-    name: "Denim",
+    name: "Simone",
     role: "The Veteran",
     rank: "The Prospector",
     lore: "First real gear. Now she reads the rock like a map.",
@@ -73,7 +73,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 5,
-    name: "Prism",
+    name: "Simone",
     role: "Flashy Miner",
     rank: "The Hustler",
     lore: "Hit her first big vein. Gear got loud, hauls got louder.",
@@ -83,7 +83,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 6,
-    name: "Rave",
+    name: "Simone",
     role: "Maximalist",
     rank: "The Tinker",
     lore: "Built her rig from scrap. Every pocket has a purpose.",
@@ -93,7 +93,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 7,
-    name: "Jinx",
+    name: "Simone",
     role: "The Collector",
     rank: "The Collector",
     lore: "Wears every gem she's ever struck. Walking proof she runs the caves.",
@@ -103,7 +103,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 8,
-    name: "Recon",
+    name: "Simone",
     role: "The Scout",
     rank: "The Scout",
     lore: "Maps the veins nobody's found. Eyes that cut through the dark.",
@@ -113,7 +113,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 9,
-    name: "Jade",
+    name: "Simone",
     role: "Deep Diver",
     rank: "The Deep Diver",
     lore: "Goes where the green glows hottest. Pressure means nothing now.",
@@ -123,7 +123,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 10,
-    name: "Dust",
+    name: "Simone",
     role: "Wastelander",
     rank: "The Legend",
     lore: "The deepest caves know her name. She digs where no cat returns.",
