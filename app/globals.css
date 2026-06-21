@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Design tokens (kept as CSS vars too, mirroring the prototype) ---- */
+:root {
+  --bg: #0e0b10;
+  --bg2: #150c18;
+  --panel: rgba(255, 255, 255, 0.045);
+  --panelb: rgba(255, 255, 255, 0.08);
+  --orange: #f2790a;
+  --gold: #ffb23e;
+  --green: #2fd27a;
+  --cream: #f7ecd8;
+  --text: #ede6e0;
+  --muted: #998e97;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body), sans-serif;
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-wrap px-7;
+  }
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-eyebrow text-orange;
+  }
+
+  /* Buttons (ported from .btn / .btn-primary / .btn-ghost) */
+  .btn {
+    @apply inline-flex cursor-pointer items-center gap-[9px] rounded-full font-display text-[15px] font-bold tracking-[0.01em] transition-all duration-[250ms];
+    padding: 14px 26px;
+  }
+  .btn-primary {
+    background: linear-gradient(180deg, #ff8a1e, #f2790a);
+    color: #1a0e02;
+    box-shadow: 0 8px 30px -6px rgba(242, 121, 10, 0.6);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px -6px rgba(242, 121, 10, 0.75);
+  }
+  .btn-ghost {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--panelb);
+  }
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+/* Custom scrollbar for the horizontal cat slider */
+.cat-scroll {
+  scrollbar-width: thin;
+}
+.cat-scroll::-webkit-scrollbar {
+  height: 7px;
+}
+.cat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+}
+
+/* Reduced-motion: kill all decorative motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
