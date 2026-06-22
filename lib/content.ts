@@ -43,13 +43,6 @@ export const steps: { id: string; icon: string; num: string }[] = [
   { id: "earn", icon: "💎", num: "03 — EARN" },
 ];
 
-/** Powered-by-Solarious pills. */
-export const pills: { id: string; color: string }[] = [
-  { id: "solarious", color: "var(--orange)" },
-  { id: "solar", color: "var(--gold)" },
-  { id: "verdex", color: "var(--green)" },
-];
-
 /** Footer link columns. Labels via i18n; hrefs here. */
 export const footerColumns: {
   id: string;

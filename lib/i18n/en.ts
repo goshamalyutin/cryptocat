@@ -81,10 +81,25 @@ const en = {
     eyebrow: "Powered by Solarious",
     title: "Backed by a real blockchain",
     lead: "CryptoCat runs on Solarious — a Layer-1 where $SOLAR is minted from verified solar energy. Your in-game gems become real tokens you claim in Verdex Wallet.",
-    pills: {
-      solarious: "Solarious",
-      solar: "$SOLAR",
-      verdex: "Verdex Wallet",
+    chips: ["Layer-1", "Proof-of-Energy", "2M+ players", "TGE — June 2026"],
+    cards: {
+      solarious: {
+        title: "Solarious",
+        desc: "A Layer-1 blockchain powered by verified solar energy.",
+      },
+      solar: {
+        title: "$SOLAR",
+        desc: "The token your in-game gems convert into.",
+      },
+      verdex: {
+        title: "Verdex Wallet",
+        desc: "Where you claim your airdrop rewards.",
+      },
+    },
+    flow: {
+      gem: "In-game gem",
+      token: "$SOLAR token",
+      caption: "Your gems become real tokens.",
     },
   },
   final: {
