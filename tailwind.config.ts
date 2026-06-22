@@ -46,12 +46,23 @@ const config: Config = {
         marquee: {
           to: { transform: "translateX(-50%)" },
         },
+        floatSm: {
+          "0%,100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
+        pulseRing: {
+          "0%": { boxShadow: "0 0 0 0 rgba(242,121,10,0.5)" },
+          "70%": { boxShadow: "0 0 0 14px rgba(242,121,10,0)" },
+          "100%": { boxShadow: "0 0 0 0 rgba(242,121,10,0)" },
+        },
       },
       animation: {
         float: "float 6s ease-in-out infinite",
         bob: "bob 5s ease-in-out infinite",
         "bob-slow": "bob 6s ease-in-out infinite",
         marquee: "marquee 22s linear infinite",
+        "float-sm": "floatSm 4s ease-in-out infinite",
+        "pulse-ring": "pulseRing 2.4s ease-out infinite",
       },
     },
   },

@@ -91,6 +91,14 @@ const en = {
     title: "Your cat is waiting",
     playNow: "Play Now",
   },
+  download: {
+    fabLabel: "Download the app",
+    heading: "Now on mobile",
+    text: "The popular Telegram game is now available as a mobile app. Download it on your platform:",
+    appStore: "App Store",
+    googlePlay: "Google Play",
+    close: "Close",
+  },
   footer: {
     tagline: "Curiosity pays in coins.",
     columns: {

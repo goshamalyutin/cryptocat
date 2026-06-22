@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, Space_Mono } from "next/font/google";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
+import DownloadFab from "@/components/DownloadFab";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -39,7 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}>
       <body>
-        <LocaleProvider>{children}</LocaleProvider>
+        <LocaleProvider>
+          {children}
+          <DownloadFab />
+        </LocaleProvider>
       </body>
     </html>
   );

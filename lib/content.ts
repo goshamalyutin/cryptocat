@@ -8,7 +8,8 @@
 
 export const links = {
   playNow: "#", // -> Telegram bot URL
-  appStore: "#",
+  appStore: "#", // -> App Store listing
+  googlePlay: "#", // -> Google Play listing
 };
 
 export const navLinks: { id: string; href: string; key: NavKey }[] = [

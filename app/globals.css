@@ -83,6 +83,29 @@
   border-radius: 10px;
 }
 
+/* Custom paw cursor — only on real pointers (not touch/mobile). */
+@media (pointer: fine) {
+  html,
+  body {
+    cursor: url("/assets/paw-cursor.png") 8 4, auto;
+  }
+  a,
+  button,
+  [role="button"],
+  summary,
+  label[for],
+  .btn {
+    cursor: url("/assets/paw-cursor.png") 8 4, pointer;
+  }
+  /* keep the normal text caret in editable fields */
+  input,
+  textarea,
+  select,
+  [contenteditable="true"] {
+    cursor: text;
+  }
+}
+
 /* Reduced-motion: kill all decorative motion */
 @media (prefers-reduced-motion: reduce) {
   *,

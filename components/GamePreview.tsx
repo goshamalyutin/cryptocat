@@ -67,8 +67,14 @@ export default function GamePreview() {
           </ul>
         </Reveal>
 
-        {/* phone mockup image (frame included) */}
+        {/* transparent phone image — floats over the section bg, no panel/box */}
         <Reveal className="relative flex justify-center">
+          {/* soft warm glow directly behind the phone */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 blur-[12px]"
+            style={{ background: "radial-gradient(circle, rgba(242,121,10,0.30), transparent 64%)" }}
+          />
           <Image
             src="/assets/game-preview.png"
             alt="CryptoCat gameplay on a phone"
@@ -77,7 +83,7 @@ export default function GamePreview() {
             sizes="(max-width: 768px) 280px, 320px"
             loading="lazy"
             className="animate-float relative z-10 h-[560px] w-auto md:h-[620px]"
-            style={{ filter: "drop-shadow(0 40px 60px rgba(0,0,0,.6))" }}
+            style={{ filter: "drop-shadow(0 26px 40px rgba(0,0,0,.45))" }}
           />
         </Reveal>
       </div>
