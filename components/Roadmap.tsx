@@ -4,7 +4,7 @@ import Reveal from "@/components/ui/Reveal";
 import CaveTexture from "@/components/ui/CaveTexture";
 import Floaters from "@/components/ui/Floaters";
 import { roadmap } from "@/lib/content";
-import { sectionFloatersA } from "@/lib/decorations";
+import { roadFloaters } from "@/lib/decorations";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export default function Roadmap() {
@@ -13,7 +13,7 @@ export default function Roadmap() {
   return (
     <section className="relative isolate overflow-hidden bg-bg2 py-[110px]" id="road">
       <CaveTexture />
-      <Floaters items={sectionFloatersA} />
+      <Floaters items={roadFloaters} />
       <div className="wrap relative z-10">
         <Reveal className="mx-auto mb-[56px] max-w-[680px] text-center">
           <span className="eyebrow">{t.roadmap.eyebrow}</span>

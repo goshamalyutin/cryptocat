@@ -5,7 +5,7 @@ import { Sun, Gem, Wallet, ArrowRight, type LucideIcon } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import CaveTexture from "@/components/ui/CaveTexture";
 import Floaters from "@/components/ui/Floaters";
-import { sectionFloatersA } from "@/lib/decorations";
+import { solarFloaters } from "@/lib/decorations";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export default function Solarious() {
@@ -25,7 +25,7 @@ export default function Solarious() {
       style={{ background: "linear-gradient(180deg, var(--bg2), var(--bg))" }}
     >
       <CaveTexture opacity="opacity-[0.1]" />
-      <Floaters items={sectionFloatersA} />
+      <Floaters items={solarFloaters} />
 
       {/* warm radial glow behind the headline */}
       <div

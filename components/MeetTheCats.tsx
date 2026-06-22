@@ -5,7 +5,7 @@ import Reveal from "@/components/ui/Reveal";
 import CaveTexture from "@/components/ui/CaveTexture";
 import Floaters from "@/components/ui/Floaters";
 import { cats, CAT_IMG_HEIGHT } from "@/lib/cats";
-import { sectionFloatersB } from "@/lib/decorations";
+import { catsFloaters } from "@/lib/decorations";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export default function MeetTheCats() {
@@ -14,7 +14,7 @@ export default function MeetTheCats() {
   return (
     <section className="relative isolate overflow-hidden bg-bg2 py-[110px]" id="cats">
       <CaveTexture />
-      <Floaters items={sectionFloatersB} />
+      <Floaters items={catsFloaters} />
       <div className="wrap relative z-10">
         <Reveal className="mb-[40px] flex flex-wrap items-end justify-between gap-5">
           <div>
@@ -62,9 +62,6 @@ export default function MeetTheCats() {
                 />
               </div>
               <h4 className="font-display text-[21px] font-bold leading-tight">{cat.rank}</h4>
-              <span className="mt-1 block font-mono text-[11px] uppercase tracking-[0.12em] text-gold">
-                {cat.name}
-              </span>
               <p className="mt-2 min-h-[38px] text-[13.5px] text-muted">{cat.lore}</p>
             </article>
           ))}

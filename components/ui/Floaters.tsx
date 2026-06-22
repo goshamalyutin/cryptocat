@@ -41,11 +41,13 @@ function Floater({
   scrollY,
   mx,
   my,
+  parallax,
 }: {
   def: FloaterDef;
   scrollY: MotionValue<number>;
   mx: MotionValue<number>;
   my: MotionValue<number>;
+  parallax: boolean;
 }) {
   const depth = def.depth ?? 1;
   const parallaxY = useTransform(scrollY, [0, 1], [depth * 70, depth * -70]);
@@ -56,7 +58,7 @@ function Floater({
     <motion.div
       aria-hidden
       className={`pointer-events-none absolute ${def.hideMobile ? "hidden md:block" : ""}`}
-      style={{ ...def.pos, y: parallaxY }}
+      style={{ ...def.pos, y: parallax ? parallaxY : 0 }}
     >
       <motion.div style={{ x: driftX, y: driftY }}>
         <Image
@@ -109,6 +111,17 @@ export default function Floaters({
   const mx = useSpring(rawX, { stiffness: 60, damping: 18 });
   const my = useSpring(rawY, { stiffness: 60, damping: 18 });
   const [fine, setFine] = useState(false);
+  // Scroll parallax only on >= md (desktop/tablet), never on mobile.
+  const [parallax, setParallax] = useState(false);
+
+  useEffect(() => {
+    if (reduce) return;
+    const mq = window.matchMedia("(min-width: 768px)");
+    const apply = () => setParallax(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, [reduce]);
 
   useEffect(() => {
     if (!mouse || reduce) return;
@@ -156,7 +169,14 @@ export default function Floaters({
   return (
     <div ref={ref} aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       {items.map((def, i) => (
-        <Floater key={i} def={def} scrollY={scrollYProgress} mx={fine ? mx : rawX} my={fine ? my : rawY} />
+        <Floater
+          key={i}
+          def={def}
+          scrollY={scrollYProgress}
+          mx={fine ? mx : rawX}
+          my={fine ? my : rawY}
+          parallax={parallax}
+        />
       ))}
     </div>
   );

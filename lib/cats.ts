@@ -1,23 +1,22 @@
 /**
- * Simone's 10 evolution tiers.
+ * Simone's 10 evolution tiers — one cat evolving rookie -> legend.
  *
- * Merged source of truth:
- *  - `name` / `role`  -> from the approved prototype cards (visual source of truth)
- *  - `rank` / `lore`  -> from LORE.md (richer narrative copy)
- *  - `image`          -> file in /public/assets
+ * The cards show only the RANK (as title) + LORE. There is no per-tier name:
+ * it's a single cat ("Simone"), made clear by the section heading
+ * "From rookie to legend".
+ *
+ *  - `rank`  -> card title
+ *  - `lore`  -> card description
+ *  - `image` -> file in /public/assets
  *
  * Edit copy here; all "Meet the Cats" text reads from this file.
  */
 
 export type Cat = {
   tier: number;
-  /** Display name on the card (prototype). */
-  name: string;
-  /** Short role label shown above the name (prototype). */
-  role: string;
-  /** Canonical rank from LORE.md. */
+  /** Rank shown as the card title. */
   rank: string;
-  /** Narrative lore line shown as the card description (LORE.md). */
+  /** Narrative lore line shown as the card description. */
   lore: string;
   /** Path under /public. */
   image: string;
@@ -33,8 +32,6 @@ export const CAT_IMG_HEIGHT = 1024;
 export const cats: Cat[] = [
   {
     tier: 1,
-    name: "Simone",
-    role: "The Rookie",
     rank: "The Rookie",
     lore: "Day one. One pickaxe, one dream, zero clue. Pure curiosity.",
     image: "/assets/tier-01.png",
@@ -43,8 +40,6 @@ export const cats: Cat[] = [
   },
   {
     tier: 2,
-    name: "Simone",
-    role: "Cozy Digger",
     rank: "The Digger",
     lore: "Found her rhythm. Mines through the night, warm and unbothered.",
     image: "/assets/tier-02.png",
@@ -53,9 +48,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 3,
-    name: "Simone",
-    role: "Speedrunner",
-    rank: "The Runner",
+    rank: "The Speedrunner",
     lore: "Learned every tunnel by heart. Fastest paws underground.",
     image: "/assets/tier-03.png",
     badge: "TIER 03",
@@ -63,9 +56,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 4,
-    name: "Simone",
-    role: "The Veteran",
-    rank: "The Prospector",
+    rank: "The Veteran",
     lore: "First real gear. Now she reads the rock like a map.",
     image: "/assets/tier-04.png",
     badge: "TIER 04",
@@ -73,9 +64,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 5,
-    name: "Simone",
-    role: "Flashy Miner",
-    rank: "The Hustler",
+    rank: "The Flashy Miner",
     lore: "Hit her first big vein. Gear got loud, hauls got louder.",
     image: "/assets/tier-05.png",
     badge: "TIER 05",
@@ -83,9 +72,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 6,
-    name: "Simone",
-    role: "Maximalist",
-    rank: "The Tinker",
+    rank: "The Maximalist",
     lore: "Built her rig from scrap. Every pocket has a purpose.",
     image: "/assets/tier-06.png",
     badge: "TIER 06",
@@ -93,8 +80,6 @@ export const cats: Cat[] = [
   },
   {
     tier: 7,
-    name: "Simone",
-    role: "The Collector",
     rank: "The Collector",
     lore: "Wears every gem she's ever struck. Walking proof she runs the caves.",
     image: "/assets/tier-07.png",
@@ -103,8 +88,6 @@ export const cats: Cat[] = [
   },
   {
     tier: 8,
-    name: "Simone",
-    role: "The Scout",
     rank: "The Scout",
     lore: "Maps the veins nobody's found. Eyes that cut through the dark.",
     image: "/assets/tier-08.png",
@@ -113,8 +96,6 @@ export const cats: Cat[] = [
   },
   {
     tier: 9,
-    name: "Simone",
-    role: "Deep Diver",
     rank: "The Deep Diver",
     lore: "Goes where the green glows hottest. Pressure means nothing now.",
     image: "/assets/tier-09.png",
@@ -123,9 +104,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 10,
-    name: "Simone",
-    role: "Wastelander",
-    rank: "The Legend",
+    rank: "The Wastelander",
     lore: "The deepest caves know her name. She digs where no cat returns.",
     image: "/assets/tier-10.png",
     badge: "TIER 10",

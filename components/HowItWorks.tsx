@@ -5,7 +5,7 @@ import CaveTexture from "@/components/ui/CaveTexture";
 import Floaters from "@/components/ui/Floaters";
 import { stepIcons } from "@/components/ui/icons";
 import { steps } from "@/lib/content";
-import { sectionFloatersA } from "@/lib/decorations";
+import { howFloaters } from "@/lib/decorations";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 export default function HowItWorks() {
@@ -14,7 +14,7 @@ export default function HowItWorks() {
   return (
     <section className="relative isolate overflow-hidden py-[110px]" id="how">
       <CaveTexture />
-      <Floaters items={sectionFloatersA} />
+      <Floaters items={howFloaters} />
       <div className="wrap relative z-10">
         <Reveal className="mx-auto mb-[56px] max-w-[680px] text-center">
           <span className="eyebrow">{t.how.eyebrow}</span>
