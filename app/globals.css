@@ -75,16 +75,13 @@
   }
 }
 
-/* Custom scrollbar for the horizontal cat slider */
+/* Hide the native scrollbar on the cat slider (scroll/swipe still works) */
 .cat-scroll {
-  scrollbar-width: thin;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
 }
 .cat-scroll::-webkit-scrollbar {
-  height: 7px;
-}
-.cat-scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 10px;
+  display: none; /* Chrome/Safari */
 }
 
 /* Custom paw cursor — only on real pointers (not touch/mobile). */
