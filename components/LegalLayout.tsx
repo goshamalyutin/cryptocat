@@ -29,10 +29,7 @@ export default function LegalLayout({
         <h1 className="font-display text-[clamp(30px,5vw,44px)] font-bold tracking-[-0.02em]">{title}</h1>
       </div>
 
-      {/* placeholder notice */}
-      <p className="mt-6 rounded-2xl border border-orange/25 bg-orange/[0.07] px-5 py-3.5 font-mono text-[12.5px] leading-relaxed text-gold">
-        Placeholder content, not legal advice — to be reviewed before launch.
-      </p>
+      {/* TODO: placeholder legal text, review with a lawyer before launch — not shown to visitors */}
 
       {intro && <p className="mt-7 text-[15.5px] leading-relaxed text-[#d8cfd4]">{intro}</p>}
 
