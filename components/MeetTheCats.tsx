@@ -53,7 +53,7 @@ export default function MeetTheCats() {
               <div className="relative z-[2] grid h-[240px] place-items-end justify-center">
                 <Image
                   src={cat.image}
-                  alt={`Simone — ${cat.rank}`}
+                  alt={`${cat.rank} — tier ${cat.tier} CryptoCat`}
                   width={cat.width}
                   height={CAT_IMG_HEIGHT}
                   sizes="254px"

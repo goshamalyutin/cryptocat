@@ -6,7 +6,7 @@
  */
 
 export const links = {
-  playNow: "https://t.me/CryptoCatGame_bot",
+  playNow: "https://t.me/CryptoCatGame_Bot/start",
   telegram: "https://t.me/SimcatAirdrop",
   verdex: "https://verdexwallet.com",
   solarious: "https://solarious.us",
@@ -55,7 +55,7 @@ export const steps: { id: string; icon: string; num: string }[] = [
 type FooterLink = {
   id: string;
   href?: string;
-  kind: "anchor" | "external" | "route" | "solar";
+  kind: "anchor" | "external" | "route" | "solar" | "airdrop";
 };
 
 export const footerColumns: { id: string; links: FooterLink[] }[] = [
@@ -71,7 +71,7 @@ export const footerColumns: { id: string; links: FooterLink[] }[] = [
     id: "token",
     links: [
       { id: "solar", kind: "solar" },
-      { id: "airdrop", href: links.airdrop, kind: "anchor" },
+      { id: "airdrop", kind: "airdrop" },
       { id: "verdex", href: links.verdex, kind: "external" },
     ],
   },

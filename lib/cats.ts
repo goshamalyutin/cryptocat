@@ -32,7 +32,7 @@ export const CAT_IMG_HEIGHT = 1024;
 export const cats: Cat[] = [
   {
     tier: 1,
-    rank: "The Rookie",
+    rank: "Prospector",
     lore: "Day one. One pickaxe, one dream, zero clue. Pure curiosity.",
     image: "/assets/tier-01.png",
     badge: "TIER 01",
@@ -40,7 +40,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 2,
-    rank: "The Digger",
+    rank: "Explorer",
     lore: "Found her rhythm. Mines through the night, warm and unbothered.",
     image: "/assets/tier-02.png",
     badge: "TIER 02",
@@ -48,7 +48,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 3,
-    rank: "The Speedrunner",
+    rank: "Environmentalist",
     lore: "Learned every tunnel by heart. Fastest paws underground.",
     image: "/assets/tier-03.png",
     badge: "TIER 03",
@@ -56,7 +56,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 4,
-    rank: "The Veteran",
+    rank: "Developer",
     lore: "First real gear. Now she reads the rock like a map.",
     image: "/assets/tier-04.png",
     badge: "TIER 04",
@@ -64,7 +64,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 5,
-    rank: "The Flashy Miner",
+    rank: "Extractor",
     lore: "Hit her first big vein. Gear got loud, hauls got louder.",
     image: "/assets/tier-05.png",
     badge: "TIER 05",
@@ -72,7 +72,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 6,
-    rank: "The Maximalist",
+    rank: "Refiner",
     lore: "Built her rig from scrap. Every pocket has a purpose.",
     image: "/assets/tier-06.png",
     badge: "TIER 06",
@@ -80,7 +80,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 7,
-    rank: "The Collector",
+    rank: "Marketor",
     lore: "Wears every gem she's ever struck. Walking proof she runs the caves.",
     image: "/assets/tier-07.png",
     badge: "TIER 07",
@@ -88,7 +88,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 8,
-    rank: "The Scout",
+    rank: "Minersales",
     lore: "Maps the veins nobody's found. Eyes that cut through the dark.",
     image: "/assets/tier-08.png",
     badge: "TIER 08",
@@ -96,7 +96,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 9,
-    rank: "The Deep Diver",
+    rank: "Reclamator",
     lore: "Goes where the green glows hottest. Pressure means nothing now.",
     image: "/assets/tier-09.png",
     badge: "TIER 09",
@@ -104,7 +104,7 @@ export const cats: Cat[] = [
   },
   {
     tier: 10,
-    rank: "The Wastelander",
+    rank: "Closurer",
     lore: "The deepest caves know her name. She digs where no cat returns.",
     image: "/assets/tier-10.png",
     badge: "TIER 10",

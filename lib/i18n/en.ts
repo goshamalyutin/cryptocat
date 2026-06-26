@@ -120,6 +120,13 @@ const en = {
     cta: "Learn more on Solarious",
     close: "Close",
   },
+  airdropModal: {
+    heading: "$SOLAR Airdrop",
+    text: "Play CryptoCat, dig gems, and climb the tiers — your in-game gems convert into real $SOLAR tokens. Early players will be able to claim their rewards through Verdex Wallet when the airdrop goes live.",
+    playEarn: "Play & Earn",
+    getVerdex: "Get Verdex Wallet",
+    close: "Close",
+  },
   footer: {
     tagline: "Curiosity pays in coins.",
     columns: {

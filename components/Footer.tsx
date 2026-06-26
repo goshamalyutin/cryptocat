@@ -5,10 +5,12 @@ import Image from "next/image";
 import { footerColumns, legalLinks } from "@/lib/content";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 import { useSolarModal } from "@/components/SolarModalProvider";
+import { useAirdropModal } from "@/components/AirdropModalProvider";
 
 export default function Footer() {
   const { t } = useLocale();
   const { open: openSolar } = useSolarModal();
+  const { open: openAirdrop } = useAirdropModal();
   const items = t.footer.items;
   const columns = t.footer.columns;
 
@@ -40,9 +42,15 @@ export default function Footer() {
               </h5>
               {col.links.map((l) => {
                 const label = items[l.id as keyof typeof items];
-                if (l.kind === "solar") {
+                if (l.kind === "solar" || l.kind === "airdrop") {
                   return (
-                    <button key={l.id} type="button" onClick={openSolar} aria-haspopup="dialog" className={linkClass}>
+                    <button
+                      key={l.id}
+                      type="button"
+                      onClick={l.kind === "solar" ? openSolar : openAirdrop}
+                      aria-haspopup="dialog"
+                      className={linkClass}
+                    >
                       {label}
                     </button>
                   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, Space_Mono } from "next/font/google";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
 import { SolarModalProvider } from "@/components/SolarModalProvider";
+import { AirdropModalProvider } from "@/components/AirdropModalProvider";
 import DownloadFab from "@/components/DownloadFab";
 import "./globals.css";
 
@@ -43,8 +44,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <LocaleProvider>
           <SolarModalProvider>
-            {children}
-            <DownloadFab />
+            <AirdropModalProvider>
+              {children}
+              <DownloadFab />
+            </AirdropModalProvider>
           </SolarModalProvider>
         </LocaleProvider>
       </body>
