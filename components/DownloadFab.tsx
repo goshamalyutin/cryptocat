@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "@/components/ui/Modal";
@@ -12,12 +12,28 @@ export default function DownloadFab() {
   const { t } = useLocale();
   const d = t.download;
   const [open, setOpen] = useState(false);
+  // Hide the FAB while the footer is on screen so it never covers the legal links.
+  const [atFooter, setAtFooter] = useState(false);
+
+  useEffect(() => {
+    const footer = document.getElementById("site-footer");
+    if (!footer || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(
+      ([entry]) => setAtFooter(entry.isIntersecting),
+      { threshold: 0 },
+    );
+    io.observe(footer);
+    return () => io.disconnect();
+  }, []);
 
   return (
     <>
-      {/* Floating button */}
+      {/* Floating button — fades out over the footer */}
       <div
-        className="fixed z-[60] animate-float-sm"
+        aria-hidden={atFooter}
+        className={`fixed z-[60] transition-opacity duration-300 motion-safe:animate-float-sm ${
+          atFooter ? "pointer-events-none opacity-0" : "opacity-100"
+        }`}
         style={{
           right: "calc(1.25rem + env(safe-area-inset-right))",
           bottom: "calc(1.25rem + env(safe-area-inset-bottom))",
@@ -28,6 +44,7 @@ export default function DownloadFab() {
           onClick={() => setOpen(true)}
           aria-label={d.fabLabel}
           aria-haspopup="dialog"
+          tabIndex={atFooter ? -1 : 0}
           className="group relative grid h-14 w-14 place-items-center rounded-full border border-orange/40 bg-bg2 shadow-[0_0_24px_rgba(242,121,10,0.5)] transition-transform duration-200 hover:scale-110 active:scale-95 md:h-16 md:w-16"
         >
           <span aria-hidden className="absolute inset-0 rounded-full animate-pulse-ring" />

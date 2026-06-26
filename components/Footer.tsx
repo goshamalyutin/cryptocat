@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { footerColumns, legalLinks } from "@/lib/content";
@@ -18,7 +19,7 @@ export default function Footer() {
     "mb-2.5 block text-left text-[14.5px] text-[#bdb2ba] transition-colors duration-200 hover:text-orange";
 
   return (
-    <footer className="border-t border-white/[0.07] pb-[34px] pt-[60px]">
+    <footer id="site-footer" className="border-t border-white/[0.07] pb-[34px] pt-[60px]">
       <div className="wrap">
         <div className="mb-[40px] grid grid-cols-2 gap-[30px] md:grid-cols-[1.6fr_1fr_1fr_1fr]">
           <div>
@@ -79,15 +80,25 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-wrap justify-between gap-2.5 border-t border-white/[0.06] pt-[22px] text-[13px] text-muted">
-          <span>{t.footer.copyright}</span>
-          <span>
-            {legalLinks.map((l) => (
-              <Link key={l.id} href={l.href} className="ml-[18px]">
-                {t.footer.legal[l.id as keyof typeof t.footer.legal]}
-              </Link>
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-white/[0.06] pt-[22px] text-[13px]">
+          <span className="text-muted">{t.footer.copyright}</span>
+          <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            {legalLinks.map((l, i) => (
+              <Fragment key={l.id}>
+                {i > 0 && (
+                  <span aria-hidden className="text-muted/50">
+                    ·
+                  </span>
+                )}
+                <Link
+                  href={l.href}
+                  className="font-medium text-[#d8cfd4] underline-offset-4 transition-colors duration-200 hover:text-orange hover:underline"
+                >
+                  {t.footer.legal[l.id as keyof typeof t.footer.legal]}
+                </Link>
+              </Fragment>
             ))}
-          </span>
+          </nav>
         </div>
       </div>
     </footer>
