@@ -91,7 +91,7 @@ export default function Hero() {
             {t.hero.lead}
           </p>
           <div className="mb-[38px] flex flex-wrap justify-center gap-[14px] md:justify-start">
-            <Button href={links.playNow} variant="primary">
+            <Button href={links.playNow} variant="primary" newTab>
               {t.hero.playNow} <IconSend className="h-[18px] w-[18px]" />
             </Button>
             <Button href="#how" variant="ghost">

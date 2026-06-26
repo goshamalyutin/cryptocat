@@ -114,6 +114,12 @@ const en = {
     googlePlay: "Google Play",
     close: "Close",
   },
+  solarModal: {
+    heading: "$SOLAR",
+    text: "CryptoCat runs on Solarious — a Layer-1 blockchain where $SOLAR is minted from verified solar energy. The gems you earn in-game convert into real $SOLAR tokens you can claim at the airdrop.",
+    cta: "Learn more on Solarious",
+    close: "Close",
+  },
   footer: {
     tagline: "Curiosity pays in coins.",
     columns: {
@@ -125,13 +131,10 @@ const en = {
       about: "About",
       cats: "Meet the Cats",
       roadmap: "Roadmap",
-      news: "News",
       solar: "$SOLAR",
       airdrop: "Airdrop",
       verdex: "Verdex Wallet",
-      x: "X / Twitter",
       telegram: "Telegram",
-      discord: "Discord",
     },
     copyright: "© 2026 CryptoCat — The Game",
     legal: {

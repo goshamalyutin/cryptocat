@@ -6,10 +6,11 @@ import Image from "next/image";
 import { navLinks, socials, links } from "@/lib/content";
 import { socialIcons } from "@/components/ui/icons";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
-import { localeNames } from "@/lib/i18n/config";
+import { useSolarModal } from "@/components/SolarModalProvider";
 
 export default function Nav() {
-  const { t, locale, toggleLocale } = useLocale();
+  const { t } = useLocale();
+  const { open: openSolar } = useSolarModal();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -39,12 +40,20 @@ export default function Nav() {
           />
         </Link>
 
-        <div className="hidden gap-[34px] text-sm font-medium md:flex">
+        <div className="hidden items-center gap-[34px] text-sm font-medium md:flex">
           {navLinks.map((l) => (
             <Link key={l.id} href={l.href} className="text-muted transition-colors duration-200 hover:text-text">
               {t.nav[l.key]}
             </Link>
           ))}
+          <button
+            type="button"
+            onClick={openSolar}
+            aria-haspopup="dialog"
+            className="font-medium text-muted transition-colors duration-200 hover:text-text"
+          >
+            {t.nav.solar}
+          </button>
         </div>
 
         <div className="flex items-center gap-4">
@@ -55,6 +64,8 @@ export default function Nav() {
                 <Link
                   key={s.id}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
                   className="grid h-9 w-9 place-items-center rounded-full border border-panelb bg-panel text-muted transition-colors duration-200 hover:border-white/20 hover:text-text"
                 >
@@ -64,16 +75,12 @@ export default function Nav() {
             })}
           </div>
 
-          <button
-            type="button"
-            onClick={toggleLocale}
-            aria-label="Switch language"
-            className="cursor-pointer rounded-lg border border-panelb px-2.5 py-1.5 font-mono text-xs text-muted transition-colors hover:text-text"
+          <Link
+            href={links.playNow}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
           >
-            {localeNames[locale]}
-          </button>
-
-          <Link href={links.playNow} className="btn btn-primary">
             {t.nav.playNow}
           </Link>
         </div>

@@ -56,6 +56,7 @@ export default function FinalCTA() {
       <Button
         href={links.playNow}
         variant="primary"
+        newTab
         className="relative z-10 !px-[38px] !py-[17px] !text-[17px]"
       >
         {t.final.playNow} <IconSend className="h-[18px] w-[18px]" />

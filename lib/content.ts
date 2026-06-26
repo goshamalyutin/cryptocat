@@ -1,30 +1,32 @@
 /**
  * Structural / link content for the site.
  *
- * Copy strings that need translation live in lib/i18n/*.ts.
+ * Copy strings live in lib/i18n/*.ts (English only).
  * This file holds non-translatable structure: hrefs, ids, icons, ordering.
- * Replace every "#" with a real URL when available.
  */
 
 export const links = {
-  playNow: "#", // -> Telegram bot URL
+  playNow: "https://t.me/CryptoCatGame_bot",
+  telegram: "https://t.me/SimcatAirdrop",
+  verdex: "https://verdexwallet.com",
+  solarious: "https://solarious.us",
+  airdrop: "#", // -> TBD
   appStore: "#", // -> App Store listing
   googlePlay: "#", // -> Google Play listing
 };
 
+export type NavKey = "about" | "cats" | "roadmap";
+
+/** In-page anchor links (smooth-scroll to section IDs). $SOLAR is a modal, handled separately. */
 export const navLinks: { id: string; href: string; key: NavKey }[] = [
   { id: "about", href: "#how", key: "about" },
   { id: "cats", href: "#cats", key: "cats" },
   { id: "roadmap", href: "#road", key: "roadmap" },
-  { id: "solar", href: "#solar", key: "solar" },
 ];
 
-export type NavKey = "about" | "cats" | "roadmap" | "solar";
-
-export const socials: { id: string; href: string; glyph: string; label: string }[] = [
-  { id: "x", href: "#", glyph: "𝕏", label: "X / Twitter" },
-  { id: "telegram", href: "#", glyph: "✈", label: "Telegram" },
-  { id: "discord", href: "#", glyph: "◈", label: "Discord" },
+/** Social icons in the nav (Telegram only). */
+export const socials: { id: string; href: string; label: string }[] = [
+  { id: "telegram", href: links.telegram, label: "Telegram" },
 ];
 
 /** Roadmap structure (copy is translated via i18n keys roadmap.<id>.*). */
@@ -43,40 +45,44 @@ export const steps: { id: string; icon: string; num: string }[] = [
   { id: "earn", icon: "💎", num: "03 — EARN" },
 ];
 
-/** Footer link columns. Labels via i18n; hrefs here. */
-export const footerColumns: {
+/**
+ * Footer link columns. `kind` controls rendering:
+ *  - "anchor"  -> in-page smooth-scroll link
+ *  - "external"-> opens in a new tab
+ *  - "route"   -> internal Next route
+ *  - "solar"   -> opens the $SOLAR modal (no href)
+ */
+type FooterLink = {
   id: string;
-  links: { id: string; href: string }[];
-}[] = [
+  href?: string;
+  kind: "anchor" | "external" | "route" | "solar";
+};
+
+export const footerColumns: { id: string; links: FooterLink[] }[] = [
   {
     id: "game",
     links: [
-      { id: "about", href: "#how" },
-      { id: "cats", href: "#cats" },
-      { id: "roadmap", href: "#road" },
-      { id: "news", href: "#" },
+      { id: "about", href: "#how", kind: "anchor" },
+      { id: "cats", href: "#cats", kind: "anchor" },
+      { id: "roadmap", href: "#road", kind: "anchor" },
     ],
   },
   {
     id: "token",
     links: [
-      { id: "solar", href: "#" },
-      { id: "airdrop", href: "#" },
-      { id: "verdex", href: "#" },
+      { id: "solar", kind: "solar" },
+      { id: "airdrop", href: links.airdrop, kind: "anchor" },
+      { id: "verdex", href: links.verdex, kind: "external" },
     ],
   },
   {
     id: "community",
-    links: [
-      { id: "x", href: "#" },
-      { id: "telegram", href: "#" },
-      { id: "discord", href: "#" },
-    ],
+    links: [{ id: "telegram", href: links.telegram, kind: "external" }],
   },
 ];
 
 export const legalLinks: { id: string; href: string }[] = [
-  { id: "terms", href: "#" },
-  { id: "privacy", href: "#" },
-  { id: "risk", href: "#" },
+  { id: "terms", href: "/terms" },
+  { id: "privacy", href: "/privacy" },
+  { id: "risk", href: "/risk" },
 ];

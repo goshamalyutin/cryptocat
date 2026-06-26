@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, Space_Mono } from "next/font/google";
 import { LocaleProvider } from "@/lib/i18n/LocaleProvider";
+import { SolarModalProvider } from "@/components/SolarModalProvider";
 import DownloadFab from "@/components/DownloadFab";
 import "./globals.css";
 
@@ -41,8 +42,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${spaceMono.variable}`}>
       <body>
         <LocaleProvider>
-          {children}
-          <DownloadFab />
+          <SolarModalProvider>
+            {children}
+            <DownloadFab />
+          </SolarModalProvider>
         </LocaleProvider>
       </body>
     </html>
