@@ -14,7 +14,7 @@ const en = {
     eyebrow: "2,000,000+ players already digging",
     titleA: "Earn With",
     titleHighlight: "Crypto Cats",
-    lead: "While other cats nap, your cat digs the hills and caves for hidden crypto treasure. The more you learn about blockchain, the more gems you earn.",
+    lead: "While other cats nap, your curious cat digs the hills and caves for hidden crypto treasure. The more you learn about blockchain, the more gems you earn.",
     playNow: "Play Now",
     howItWorks: "How it works",
     stats: {
@@ -44,9 +44,9 @@ const en = {
     },
   },
   cats: {
-    eyebrow: "Meet the cats",
+    eyebrow: "Meet the clever cats",
     title: "From rookie to legend",
-    lead: "Every cat starts with a single pickaxe. Upgrade your gear, dig deeper, and evolve into a full-blown treasure hunter.",
+    lead: "Every cool cat starts with a single pickaxe. Upgrade your gear, dig deeper, and evolve into a full-blown treasure hunter.",
   },
   preview: {
     eyebrow: "The game",
@@ -103,7 +103,7 @@ const en = {
     },
   },
   final: {
-    title: "Your cat is waiting",
+    title: "Your crypto cat is waiting",
     playNow: "Play Now",
   },
   download: {
